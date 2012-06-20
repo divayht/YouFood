@@ -1,0 +1,4 @@
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood.Domain\bin\Debug\YouFood.Domain.dll
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood.Domain\bin\Debug\YouFood.Domain.pdb
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood.Domain\obj\Debug\YouFood.Domain.dll
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood.Domain\obj\Debug\YouFood.Domain.pdb

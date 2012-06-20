@@ -1,0 +1,13 @@
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood\obj\Debug\YouFood.csprojResolveAssemblyReference.cache
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood\bin\YouFood.dll
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood\bin\YouFood.pdb
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood\bin\EntityFramework.dll
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood\bin\YouFood.Domain.dll
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood\bin\YouFood.Services.dll
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood\bin\YouFood.Data.dll
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood\bin\YouFood.Domain.pdb
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood\bin\YouFood.Services.pdb
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood\bin\EntityFramework.xml
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood\bin\YouFood.Data.pdb
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood\obj\Debug\YouFood.dll
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood\obj\Debug\YouFood.pdb
