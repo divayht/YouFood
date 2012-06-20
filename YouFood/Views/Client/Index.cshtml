@@ -1,0 +1,51 @@
+﻿@using YouFood.Domain.Model
+@model YouFood.Domain.Model.Menu
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>coucou</h2>
+
+@*<table>
+    <th>
+        <td>Entree</td>
+        <td>Plat</td>
+        <td>Dessert</td>
+    </th>  
+     
+    @foreach (var dish in Model.Dishes)
+    {
+        <td>@dish.Name</td>
+        <td>@dish.Price</td>
+    }
+</table>*@
+
+entrées
+<ul>
+    @foreach (var dish in Model.Dishes.Where(x => x.DishType == DishType.Starter))
+    {
+        <li>
+            @dish.Name : @dish.Price €
+        </li>
+    }
+</ul>
+
+plats
+<ul>
+    @foreach (var dish in Model.Dishes.Where(x => x.DishType == DishType.MainDish))
+    {
+        <li>
+            @dish.Name : @dish.Price €
+        </li>
+    }
+</ul>
+
+desserts
+<ul>
+    @foreach (var dish in Model.Dishes.Where(x => x.DishType == DishType.Desert))
+    {
+        <li>
+            @dish.Name : @dish.Price €
+        </li>
+    }
+</ul>

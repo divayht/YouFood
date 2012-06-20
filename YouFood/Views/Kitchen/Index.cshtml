@@ -1,0 +1,16 @@
+﻿@model List<YouFood.Domain.Model.Order>
+@{
+    ViewBag.Title = "Index";
+}
+
+<ul>
+@foreach (var order in Model)
+{
+    <ul>
+        @foreach (var dish in order.Dishes)
+        {
+            <li>@dish.Name : @order.OrderState</li>
+        }
+    </ul>
+}
+</ul>
