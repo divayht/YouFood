@@ -1,16 +1,67 @@
-﻿@model List<YouFood.Domain.Model.Order>
+﻿@model YouFood.ViewModels.KitchenViewModel
 @{
-    ViewBag.Title = "Index";
+	ViewBag.Title = "Index";
 }
 
-<ul>
-@foreach (var order in Model)
-{
-    <ul>
-        @foreach (var dish in order.Dishes)
-        {
-            <li>@dish.Name : @order.OrderState</li>
-        }
-    </ul>
-}
-</ul>
+<div class="container">
+	<h1 class="padded">Plats à préparer</h1>
+	
+	@if (Model.Free.Count == 0)
+	{
+		<div class="label label-success">
+			<p>Il n'y aucun plat à cuisiner.</p>
+		</div>
+	}
+			
+	@foreach (var order in Model.Free)
+	{
+		<div class="row alert alert-info">
+			<h2>Commande N° @order.Id</h2>
+			<ol>
+			@foreach (var line in order.CartLines)
+			{
+				<li>@line.Dish.Name <span class="badge">@line.Quantity</span></li>
+			}
+			</ol>
+			@using (Html.BeginForm("DishIsCooking", "Kitchen"))
+			{
+				<input type="hidden" name="orderId" value="@order.Id"/>
+				<button class="btn btn-warning btn-large" type="submit">
+					<i class="icon-lock icon-white"></i>
+					Cuisiner
+				</button>
+			}
+
+			@using (Html.BeginForm("DishIsReadyToServe", "Kitchen"))
+			{   <input type="hidden" name="orderId" value="@order.Id"/>
+				<button class="btn btn-success btn-large" type="submit">
+					<i class="icon-ok icon-white"></i>
+					Servir
+				</button>
+			}
+		</div>
+	}
+	
+	@foreach (var order in Model.Cooking)
+	{
+		<div class="row alert alert-block">
+			<h2>Commande N° @order.Id<small> Cette commande est en train d'être préparée</small></h2>
+				
+			<ol>
+				@foreach (var line in order.CartLines)
+				{
+					<li>@line.Dish.Name <span class="badge">@line.Quantity</span></li>
+				}
+			</ol>
+
+			@using (Html.BeginForm("DishIsReadyToServe", "Kitchen"))
+			{
+				<input type="hidden" name="orderId" value="@order.Id"/>
+				<button class="btn btn-success btn-large" type="submit">
+					<i class="icon-ok icon-white"></i>
+					Servir
+				</button>
+			}
+		</div>
+	}
+</div>

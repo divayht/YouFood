@@ -1,6 +1,0 @@
-<Modules>
-  <Module PersistentId="7C1389F7-EC38-4578-BD97-E81EDA5A85B0" ModuleId="YouFood" />
-  <Module PersistentId="B06DB58B-B960-45E1-8FDA-C341C88B72E8" ModuleId="YouFood.Domain" />
-  <Module PersistentId="B07CA3CA-798C-4AA0-AE94-D4E7EA9D2E06" ModuleId="YouFood.Services" />
-  <Module PersistentId="14C953A1-B452-4AAF-BC9D-9DF2514DC103" ModuleId="YouFood.Data" />
-</Modules>

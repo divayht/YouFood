@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\Users\divayht\Downloads\YouFoodPub\" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profil1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Content/images/background.png" publishTime="06/19/2012 00:08:00" />
+    <file relUrl="Content/bootstrap/css/bootstrap-responsive.css" publishTime="06/19/2012 01:43:44" />
+    <file relUrl="Content/bootstrap/images/glyphicons-halflings-white.png" publishTime="02/19/2012 08:32:26" />
+    <file relUrl="Content/bootstrap/css/bootstrap.min.css" publishTime="02/19/2012 08:32:26" />
+    <file relUrl="Global.asax" publishTime="02/20/2012 10:50:48" />
+    <file relUrl="bin/EntityFramework.xml" publishTime="06/05/2012 22:21:50" />
+    <file relUrl="Views/_ViewStart.cshtml" publishTime="02/20/2012 10:50:48" />
+    <file relUrl="bin/YouFood.Data.pdb" publishTime="06/19/2012 22:17:47" />
+    <file relUrl="Content/bootstrap/images/glyphicons-halflings.png" publishTime="02/19/2012 08:32:26" />
+    <file relUrl="Views/Client/NewOrder.cshtml" publishTime="06/06/2012 00:29:27" />
+    <file relUrl="Views/Admin/SetSpecialty.cshtml" publishTime="06/19/2012 20:57:28" />
+    <file relUrl="bin/YouFood.Data.dll" publishTime="06/19/2012 22:17:47" />
+    <file relUrl="Views/Web.config" publishTime="02/20/2012 10:50:48" />
+    <file relUrl="Views/Admin/AddUser.cshtml" publishTime="06/19/2012 20:57:20" />
+    <file relUrl="Views/Shared/Error.cshtml" publishTime="02/20/2012 10:50:48" />
+    <file relUrl="Views/Client/Checkout.cshtml" publishTime="06/19/2012 13:26:25" />
+    <file relUrl="Views/Admin/Index.cshtml" publishTime="06/19/2012 19:02:50" />
+    <file relUrl="Views/Kitchen/Index.cshtml" publishTime="06/19/2012 18:56:43" />
+    <file relUrl="Views/Client/Summary.cshtml" publishTime="06/19/2012 13:38:51" />
+    <file relUrl="bin/YouFood.Services.dll" publishTime="06/19/2012 22:17:48" />
+    <file relUrl="packages.config" publishTime="06/04/2012 10:46:25" />
+    <file relUrl="Views/Home/Index.cshtml" publishTime="06/19/2012 19:57:58" />
+    <file relUrl="Views/Admin/ListOrders.cshtml" publishTime="06/19/2012 20:38:25" />
+    <file relUrl="Content/bootstrap/css/bootstrap-responsive.min.css" publishTime="02/19/2012 08:32:27" />
+    <file relUrl="Views/Admin/AddDish.cshtml" publishTime="06/19/2012 20:57:09" />
+    <file relUrl="bin/YouFood.Services.pdb" publishTime="06/19/2012 22:17:48" />
+    <file relUrl="Views/Waiter/Index.cshtml" publishTime="06/19/2012 18:55:00" />
+    <file relUrl="bin/YouFood.Domain.dll" publishTime="06/19/2012 22:17:46" />
+    <file relUrl="Views/Client/Index.cshtml" publishTime="06/19/2012 18:21:00" />
+    <file relUrl="Views/Shared/_Layout.cshtml" publishTime="06/19/2012 18:40:51" />
+    <file relUrl="Views/Admin/ListUsers.cshtml" publishTime="06/19/2012 20:41:00" />
+    <file relUrl="bin/YouFood.dll" publishTime="06/19/2012 22:17:50" />
+    <file relUrl="Views/Admin/ListDishes.cshtml" publishTime="06/19/2012 20:08:34" />
+    <file relUrl="Content/bootstrap/css/bootstrap.css" publishTime="06/19/2012 01:43:23" />
+    <file relUrl="Content/Site.css" publishTime="06/19/2012 18:18:45" />
+    <file relUrl="bin/YouFood.pdb" publishTime="06/19/2012 22:17:50" />
+    <file relUrl="bin/EntityFramework.dll" publishTime="06/05/2012 22:21:50" />
+    <file relUrl="Views/Auth/LogOn.cshtml" publishTime="06/19/2012 18:39:40" />
+    <file relUrl="Web.config" publishTime="06/19/2012 22:17:51" />
+    <file relUrl="Scripts/bootstrap.min.js" publishTime="02/19/2012 08:32:27" />
+    <file relUrl="bin/YouFood.Domain.pdb" publishTime="06/19/2012 22:17:46" />
+  </publishProfile>
+</publishData>

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using YouFood.Domain.Model.Base;
 
 namespace YouFood.Domain.Model
@@ -6,6 +7,8 @@ namespace YouFood.Domain.Model
     public class Order : Entity<int>
     {
         public double Price { get; set; }
+
+        public DateTime Date { get; set; }
 
         public OrderState OrderState { get; set; }
         public int OrderStateId
@@ -19,7 +22,7 @@ namespace YouFood.Domain.Model
         public int TableId { get; set; }
         public virtual Table Table { get; set; }
 
-        public virtual IList<Dish> Dishes { get; set; }
+        public virtual IList<CartLine> CartLines { get; set; }
     }
 
     public enum OrderState : int

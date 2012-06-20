@@ -1,0 +1,33 @@
+﻿@model YouFood.ViewModels.AddDishViewModel
+@{
+    ViewBag.Title = "AddDish";
+}
+
+@Html.Partial("_NavBar")
+
+<div class="container">
+    @using (Html.BeginForm("AddDish", "Admin", FormMethod.Post, new { @class = "well"}))
+    {
+        <label>Nom</label>
+        <input type="text" class="span3" name="name" />
+
+        <label>Description</label>
+        <input type="text" class="span5" name="description" />
+        
+        <label>Prix</label>
+        <input type="text" class="span3" name="price" />
+        
+        <label>Temps de préparation</label>
+        <input type="text" class="span3" name="timeToCook" />
+        
+        <label>Specialité</label>
+        @Html.DropDownList("specialtyId", Model.Specialties, string.Empty)
+
+        <label>Type de plat</label>
+        @Html.DropDownList("DishTypeId", Model.DishesType, string.Empty)
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Continuer</button>
+        </div>
+    }
+</div>

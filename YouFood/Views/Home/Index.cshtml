@@ -1,25 +1,32 @@
-﻿@model YouFood.Domain.Model.Corporate
+﻿@model YouFood.Domain.Model.Specialty
 @{
-    ViewBag.Title = "Index";
+	ViewBag.Title = "Index";
 }
-<h2>Index</h2>
-@*<ol>
-    @foreach (var restaurant in Model.Restaurants)
-    {
-        <li>@restaurant.Name
-            <ul>
-                @foreach (var zone in restaurant.Zones)
-                {
-                    <li>@zone.Name
-                        <ul>
-                            @foreach (var table in zone.Tables)
-                            {
-                                <li>@table.Id</li>
-                            }
-                        </ul>
-                    </li>
-                }
-            </ul>
-        </li>
-    }
-</ol>*@
+
+<div class="container">
+	<div class="hero-unit">
+		<h1 class="highlighted">Bienvenue chez le restaurateur YouFood</h1>
+		<p>
+			C'est la <strong>spécialité @Model.Name</strong> qui est à l'honneur cette semaine!
+		</p>
+		<p>
+			<img id="logo-specialty" src="@Model.Image" alt="@Model.Name"/>
+		</p>
+		<a class="btn btn-primary btn-large" href="/Auth/LogOn">
+			<i class="icon-user icon-white"></i>
+			Vous êtes un client
+		</a>
+		<a class="btn btn-warning btn-large" href="/Kitchen/Index">
+			<i class="icon-time icon-white"></i>
+			Vous êtes cuisiner
+		</a>
+		<a class="btn btn-inverse btn-large" href="/Waiter/Index">
+			<i class="icon-eye-open icon-white"></i>
+			Vous êtes serveur
+		</a>
+		<a class="btn btn-danger btn-large" href="/Admin/Index">
+			<i class="icon-user icon-white"></i>
+			Vous êtes administrateur
+		</a>
+	</div>
+</div>

@@ -20,6 +20,9 @@ namespace YouFood.Data.Configurations
                 .HasColumnName("Price")
                 .IsRequired();
 
+            Property(x => x.Date)
+                .HasColumnName("Date");
+
             HasRequired(x => x.Table)
                 .WithMany()
                 .HasForeignKey(x => x.TableId);
@@ -27,15 +30,6 @@ namespace YouFood.Data.Configurations
             Property(x => x.OrderStateId)
                 .HasColumnName("State")
                 .IsRequired();
-
-            HasMany(x => x.Dishes)
-                .WithMany()
-                .Map(x =>
-                {
-                    x.ToTable("DishesInOrder");
-                    x.MapLeftKey("OrderId");
-                    x.MapRightKey("DishId");
-                });
 
             Ignore(x => x.OrderState);
 

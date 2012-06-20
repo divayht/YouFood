@@ -1,6 +1,9 @@
-﻿using System.Data.Entity;
+﻿using System.Data;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using YouFood.Data.Configurations;
 using YouFood.Domain.Model;
+using System.Data.Objects.DataClasses;
 
 namespace YouFood.Data.Context
 {
@@ -14,6 +17,8 @@ namespace YouFood.Data.Context
         public DbSet<Specialty> Specialties { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Dish> Dishes { get; set; }
+        public DbSet<CartLine> CartLines { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public WebContext(string connectionString) : base(connectionString)
         {
@@ -30,6 +35,7 @@ namespace YouFood.Data.Context
             modelBuilder.Configurations.Add(new MenusConfiguration());
             modelBuilder.Configurations.Add(new SpecialtiesConfiguration());
             modelBuilder.Configurations.Add(new OrdersConfiguration());
+            modelBuilder.Configurations.Add(new CartLinesConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Base\Entity.cs" />
+    <Compile Include="Model\CartLine.cs" />
     <Compile Include="Model\Corporate.cs" />
     <Compile Include="Model\Dish.cs" />
     <Compile Include="Model\Menu.cs" />
@@ -48,6 +49,7 @@
     <Compile Include="Model\Restaurant.cs" />
     <Compile Include="Model\Specialty.cs" />
     <Compile Include="Model\Table.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Model\Zone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IRepository.cs" />

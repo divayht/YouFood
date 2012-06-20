@@ -8,6 +8,7 @@ using YouFood.Domain.Model;
 
 namespace YouFood.Controllers
 {
+    [Authorize]
     public class WaiterController : Controller
     {
         private readonly OrderService orderService;
@@ -22,6 +23,13 @@ namespace YouFood.Controllers
             List<Order> orders = orderService.GetReadyOrders();
 
             return View(orders);
+        }
+
+        [HttpPost]
+        public ActionResult OrderIsServed(int orderId)
+        {
+            orderService.UpdateState(orderId, OrderState.Closed);
+            return RedirectToAction("Index", "Waiter");
         }
 
     }

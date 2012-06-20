@@ -1,0 +1,53 @@
+﻿@model YouFood.Models.Cart
+@{
+	ViewBag.Title = "Summary";
+}
+
+<div class="container">
+	
+	<strong>Plats commandés</strong>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Nom du plat</th>
+				<th>Quantité</th>
+				<th>Prix unitaire (€)</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var line in Model.Lines)
+			{
+				<tr>
+					<td>@line.Dish.Name</td>
+					<td>@line.Quantity</td>
+					<td>@line.Dish.Price</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+	
+	<strong>Récapitulatif</strong>
+	<table class="table table-bordered">
+		<tr>
+			<td><span class="pull-right">TOTAL HT</span></td>
+			<td>@Model.ComputeTotalValue() €</td>
+		</tr>
+		<tr>
+			<td><span class="pull-right">TVA 7,7%</span></td>
+			<td>@Model.ComputeTaxes() €</td>
+		</tr>
+		<tr>
+			<td><span class="pull-right"><b>TOTAL TTC à payer</b></span></td>
+			<td><strong>@Model.ComputeTotalValueWithTaxes() €</strong></td>
+		</tr>
+	</table>
+	
+	<div class="form-actions">
+	@using (Html.BeginForm("Checkout", "Client"))
+	{   
+		<a href="Index" class="btn btn-danger btn-large">Annuler</a>
+		<input class="btn btn-success btn-large" type="submit" value="Terminer la commande" />
+	}
+	</div>
+	
+</div>

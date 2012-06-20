@@ -1,51 +1,127 @@
-﻿@using YouFood.Domain.Model
-@model YouFood.Domain.Model.Menu
+﻿@model YouFood.ViewModels.MenuViewModel
 @{
-    ViewBag.Title = "Index";
+	ViewBag.Title = "Index";
 }
 
-<h2>coucou</h2>
+<div class="container">
 
-@*<table>
-    <th>
-        <td>Entree</td>
-        <td>Plat</td>
-        <td>Dessert</td>
-    </th>  
-     
-    @foreach (var dish in Model.Dishes)
-    {
-        <td>@dish.Name</td>
-        <td>@dish.Price</td>
-    }
-</table>*@
+	<div class="span12">
+		<h2 class="centered padded">Les entrées</h2>
+	</div>
+		
+	<div class="row">
+		@foreach (var line in Model.Starters)
+		{
+			
+			<div class="span6">
+				<div class="thumbnail">
+					<img src="@line.Dish.Image" alt="@line.Dish.Name"/>
+					<div class="caption centered">
+						<h3>@line.Dish.Name</h3>
+						<p>
+							<span class="label label-info">Prix: @line.Dish.Price €</span>
+							<span class="label label-warning">Quantité: @line.Quantity</span>
+						</p>
+						@using (Html.BeginForm("AddToCart", "Client"))
+						{   
+							@Html.Hidden("DishId", @line.Dish.Id)
+							<button type="submit" class="btn btn-success btn-large">
+								<i class="icon-shopping-cart icon-white"></i>
+								Ajouter
+							</button>
+						}
+					</div>
+				</div>
+			</div>
+			
+		}
+	</div>
+		
+	<div class="span12">
+		<h2 class="centered padded">Les plats</h2>
+	</div>
+		
+	<div class="row">
+		@foreach (var line in Model.MainDishes)
+		{
+			<div class="span6">
+				<div class="thumbnail">
+					<img src="@line.Dish.Image" alt="@line.Dish.Name"/>
+					<div class="caption centered">
+						<h3>@line.Dish.Name</h3>
+						<p>
+							<span class="label label-info">Prix: @line.Dish.Price €</span>
+							<span class="label label-warning">Quantité: @line.Quantity</span>
+						</p>
+						@using (Html.BeginForm("AddToCart", "Client"))
+						{   
+							@Html.Hidden("DishId", @line.Dish.Id)
+							<button type="submit" class="btn btn-success btn-large">
+								<i class="icon-shopping-cart icon-white"></i>
+								Ajouter
+							</button>
+						}
+					</div>
+				</div>
+			</div>
+		}
+	</div>
 
-entrées
-<ul>
-    @foreach (var dish in Model.Dishes.Where(x => x.DishType == DishType.Starter))
-    {
-        <li>
-            @dish.Name : @dish.Price €
-        </li>
-    }
-</ul>
+	<div class="span12">
+		<h2 class="centered padded">Les desserts</h2>
+	</div>
+		
+	<div class="row">
+		@foreach (var line in Model.Deserts)
+		{
+			<div class="span6">
+				<div class="thumbnail">
+					<img src="@line.Dish.Image" alt="@line.Dish.Name"/>
+					<div class="caption centered">
+						<h3>@line.Dish.Name</h3>
+						<p>
+							<span class="label label-info">Prix: @line.Dish.Price €</span>
+							<span class="label label-warning">Quantité: @line.Quantity</span>
+						</p>
+						@using (Html.BeginForm("AddToCart", "Client"))
+						{   
+							@Html.Hidden("DishId", @line.Dish.Id)
+							<button type="submit" class="btn btn-success btn-large">
+								<i class="icon-shopping-cart icon-white"></i>
+								Ajouter
+							</button>
+						}
+					</div>
+				</div>
+			</div>
+		}
+	</div>
 
-plats
-<ul>
-    @foreach (var dish in Model.Dishes.Where(x => x.DishType == DishType.MainDish))
-    {
-        <li>
-            @dish.Name : @dish.Price €
-        </li>
-    }
-</ul>
+	<div class="row">
+		<div class="form-actions">
+			@using (Html.BeginForm("Summary", "Client"))
+			{   
+				<input class="btn btn-primary btn-large" type="submit" value="Terminer la commande" />
+			}
+		</div>
+	</div>
+</div>
 
-desserts
-<ul>
-    @foreach (var dish in Model.Dishes.Where(x => x.DishType == DishType.Desert))
-    {
-        <li>
-            @dish.Name : @dish.Price €
-        </li>
-    }
-</ul>
+<div id="callWaiterWrapper">
+	<a class="btn btn-warning" data-toggle="modal" href="#callWaiter"><i class="icon-user icon-white"></i> Aide</a>
+</div>
+
+<div id="callWaiter" class="modal hide fade">
+	<div class="modal-header">
+		<h3>Aide</h3>
+	</div>
+	<div class="modal-body">
+		<p>Les serveurs ont été avertis de votre appel.</p>
+		<p>Ils vont vous aider dans les prochaines minutes.</p>
+		<p>Merci de votre patience.</p>
+	</div>
+	<div class="modal-footer">
+		<a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>
+	</div>
+</div>
+

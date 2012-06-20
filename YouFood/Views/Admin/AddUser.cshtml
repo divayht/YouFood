@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "AddUser";
+}
+
+@Html.Partial("_NavBar")
+
+<div class="container">
+    @using (Html.BeginForm("AddUser", "Admin", FormMethod.Post, new { @class = "well"}))
+    {
+        <label>Nom</label>
+        <input type="text" class="span3" name="name" />
+
+        <label>Mot de passe</label>
+        <input type="password" class="span3" name="password" />
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Continuer</button>
+        </div>
+    }
+</div>

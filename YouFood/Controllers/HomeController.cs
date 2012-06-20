@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using YouFood.Domain.Model;
+using YouFood.Services;
 
 namespace YouFood.Controllers
 {
@@ -14,7 +15,9 @@ namespace YouFood.Controllers
 
         public ActionResult Index()
         {
-            return View(new Corporate());
+            MenuService menuService = new MenuService();
+            Specialty specialty = menuService.GetCurrentSpecialty();
+            return View(specialty);
         }
     }
 }

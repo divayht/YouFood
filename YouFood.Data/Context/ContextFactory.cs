@@ -6,21 +6,51 @@ using System.Configuration;
 
 namespace YouFood.Data.Context
 {
-    public enum ContextType
-    {
-        WebContext
-    }
+    //public enum ContextType
+    //{
+    //    WebContext
+    //}
 
-    public static class ContextFactory
+    //public static class ContextFactory
+    //{
+    //    public static object CreateContext(ContextType contextType)
+    //    {
+    //        switch (contextType)
+    //        {
+    //            case ContextType.WebContext:
+    //                return new WebContext(ConfigurationManager.ConnectionStrings["WebContext"].ConnectionString);
+    //            default:
+    //                throw new Exception("Invalid context type");
+    //        }
+    //    }
+    //}
+
+    public class SharedObjectContext
     {
-        public static object CreateContext(ContextType contextType)
+        private readonly WebContext context;
+
+        private static readonly SharedObjectContext instance = new SharedObjectContext();
+
+        private SharedObjectContext()
         {
-            switch (contextType)
+            // Create the ObjectContext.
+            context = new WebContext(ConfigurationManager.ConnectionStrings["WebContext"].ConnectionString);
+        }
+
+        // Return the single instance of the ClientSessionManager type.
+        public static SharedObjectContext Instance
+        {
+            get
             {
-                case ContextType.WebContext:
-                    return new WebContext(ConfigurationManager.ConnectionStrings["WebContext"].ConnectionString);
-                default:
-                    throw new Exception("Invalid context type");
+                return instance;
+            }
+        }
+
+        public WebContext Context
+        {
+            get
+            {
+                return context;
             }
         }
     }

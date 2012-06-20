@@ -44,6 +44,6 @@ namespace YouFood.Domain.Repositories
         /// <returns>true if the entity is successfully deleted, otherwise false</returns>
         void Delete(TEntity entity);
 
-        void Update(TEntity entity);
+        //void Update(TEntity entity);
     }
 }

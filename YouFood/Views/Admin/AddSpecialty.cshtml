@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "AddSpecialty";
+}
+
+@Html.Partial("_NavBar")
+
+<div class="container">
+    @using (Html.BeginForm("AddSpecialty", "Admin", FormMethod.Post, new { @class = "well"}))
+    {
+        <label>Nom</label>
+        <input type="text" class="span3" name="name" />
+
+        <label>Description</label>
+        <input type="text" class="span5" name="description" />
+        
+        <label>Image</label>
+        <input type="text" class="span5" name="image" />
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Continuer</button>
+        </div>
+    }
+</div>

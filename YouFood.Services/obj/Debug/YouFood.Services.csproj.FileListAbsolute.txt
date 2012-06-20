@@ -10,3 +10,15 @@ C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood.Servic
 C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood.Services\bin\Debug\EntityFramework.xml
 C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood.Services\obj\Debug\YouFood.Services.dll
 C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood.Services\obj\Debug\YouFood.Services.pdb
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Services\bin\Debug\YouFood.Services.dll.config
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Services\bin\Debug\YouFood.Services.dll
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Services\bin\Debug\YouFood.Services.pdb
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Services\bin\Debug\EntityFramework.dll
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Services\bin\Debug\YouFood.Data.dll
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Services\bin\Debug\YouFood.Domain.dll
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Services\bin\Debug\YouFood.Data.pdb
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Services\bin\Debug\YouFood.Domain.pdb
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Services\bin\Debug\EntityFramework.xml
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Services\obj\Debug\YouFood.Services.csprojResolveAssemblyReference.cache
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Services\obj\Debug\YouFood.Services.dll
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Services\obj\Debug\YouFood.Services.pdb

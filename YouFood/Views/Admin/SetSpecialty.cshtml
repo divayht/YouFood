@@ -1,0 +1,18 @@
+﻿@model YouFood.ViewModels.SpecialtyViewModel
+@{
+    ViewBag.Title = "SetSpecialty";
+}
+
+@Html.Partial("_NavBar")
+
+<div class="container">
+    @using (Html.BeginForm("SetSpecialty", "Admin", FormMethod.Post, new { @class = "well"}))
+    {
+        <label>Specialité</label>
+        @Html.DropDownList("specialtyId", Model.Specialties, string.Empty)
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Continuer</button>
+        </div>
+    }
+</div>

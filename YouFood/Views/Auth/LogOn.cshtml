@@ -1,0 +1,27 @@
+﻿@model YouFood.ViewModels.LogOnViewModel
+@{
+    ViewBag.Title = "LogOn";
+}
+
+<div class="container">
+    <div class="alert alert-error">
+        @Html.ValidationSummary()
+    </div>
+
+    @using (Html.BeginForm("LogOn", "Auth", FormMethod.Post, new { @class = "well"}))
+    {
+        <label>Nom</label>
+        <input type="text" class="span3" name="username" />
+
+        <label>Mot de passe</label>
+        <input type="password" class="span3" name="password" />
+        
+        <label>Zone</label>
+        @Html.DropDownList("zoneId", Model.Zones, string.Empty)
+        
+        <label>Table</label>
+        @Html.DropDownList("tableId", Model.Tables, string.Empty)
+
+        <button type="submit" class="btn">Submit</button>
+    }
+</div>

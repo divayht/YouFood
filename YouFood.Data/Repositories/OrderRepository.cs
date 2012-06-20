@@ -8,7 +8,8 @@ namespace YouFood.Data.Repositories
     {
         public OrderRepository()
         {
-            var webContext = (WebContext)ContextFactory.CreateContext(ContextType.WebContext);
+            //var webContext = (WebContext)ContextFactory.CreateContext(ContextType.WebContext);
+            var webContext = SharedObjectContext.Instance.Context;
 
             base.context = webContext;
             base.Entity = webContext.Orders;

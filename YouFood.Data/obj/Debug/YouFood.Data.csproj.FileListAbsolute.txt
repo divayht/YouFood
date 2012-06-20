@@ -8,3 +8,13 @@ C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood.Data\b
 C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood.Data\obj\Debug\YouFood.Data.csprojResolveAssemblyReference.cache
 C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood.Data\obj\Debug\YouFood.Data.dll
 C:\Users\divayht\Documents\Visual Studio 2010\Projects\youfoodinc\YouFood.Data\obj\Debug\YouFood.Data.pdb
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Data\bin\Debug\YouFood.Data.dll.config
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Data\bin\Debug\YouFood.Data.dll
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Data\bin\Debug\YouFood.Data.pdb
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Data\bin\Debug\EntityFramework.dll
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Data\bin\Debug\YouFood.Domain.dll
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Data\bin\Debug\YouFood.Domain.pdb
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Data\bin\Debug\EntityFramework.xml
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Data\obj\Debug\YouFood.Data.csprojResolveAssemblyReference.cache
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Data\obj\Debug\YouFood.Data.dll
+C:\Users\divayht\Documents\Visual Studio 2010\Projects\Supinfo\youfoodinc\YouFood.Data\obj\Debug\YouFood.Data.pdb

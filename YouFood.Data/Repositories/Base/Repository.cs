@@ -23,7 +23,7 @@ namespace YouFood.Data.Repositories.Base
 
         public TEntity Get(TId id)
         {
-            return Entity.Where(e => e.Id.CompareTo(id) == 0).FirstOrDefault();
+            return Entity.FirstOrDefault(e => e.Id.CompareTo(id) == 0);
         }
 
         public IQueryable<TEntity> Get(System.Linq.Expressions.Expression<Func<TEntity, bool>> predicate)
@@ -33,7 +33,8 @@ namespace YouFood.Data.Repositories.Base
 
         public void Add(TEntity entity)
         {
-            this.Entity.Add(entity);
+             this.Entity.Add(entity);
+            SaveOrUpdate();
         }
 
         public void SaveOrUpdate()
@@ -44,23 +45,20 @@ namespace YouFood.Data.Repositories.Base
             }
             catch (DbEntityValidationException dbEx)
             {
-                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                foreach (var validationError in dbEx.EntityValidationErrors.SelectMany(validationErrors => validationErrors.ValidationErrors))
                 {
-                    foreach (var validationError in validationErrors.ValidationErrors)
-                    {
-                        Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
-                    }
+                    Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
                 }
 
                 throw new Exception("Playtem fatal error while saving data");
             }
         }
 
-        public void Update(TEntity entity)
-        {
-            this.Entity.Attach(entity);
-            SaveOrUpdate();
-        }
+        //public void Update(TEntity entity)
+        //{
+        //    this.Entity.Attach(entity);
+        //    SaveOrUpdate();
+        //}
 
         public void Delete(TEntity entity)
         {

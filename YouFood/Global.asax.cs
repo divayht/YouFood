@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using YouFood.Binders;
+using YouFood.Models;
 
 namespace YouFood
 {
@@ -35,6 +37,8 @@ namespace YouFood
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
+            ModelBinders.Binders.Add(typeof(Cart), new ClientModelBinder());
         }
     }
 }

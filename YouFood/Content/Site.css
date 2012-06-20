@@ -1,75 +1,61 @@
-body
-{
-    font-size: .85em;
-    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
-    color: #232323;
-    background-color: #fff;
+h1.padded,
+h2.padded,
+h3.padded,
+h4.padded,
+h5.padded,
+h6.padded {
+	padding: 20px 0 20px 0;
 }
 
-header,
-footer,
-nav,
-section {
-    display: block;
+body {
+	padding-top: 60px;
 }
 
-/* Styles for basic forms
------------------------------------------------------------*/
-
-fieldset 
-{
-    border:1px solid #ddd;
-    padding:0 1.4em 1.4em 1.4em;
-    margin:0 0 1.5em 0;
+.hero-unit h1.highlighted {
+	color: #D80E6C;
 }
 
-legend 
-{
-    font-size:1.2em;
-    font-weight: bold;
+.centered {
+	text-align: center;
+}
+div.centered {
+	margin-left: auto;
+	margin-right: auto;
 }
 
-textarea 
-{
-    min-height: 75px;
+img.centered,
+a.centered {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.editor-label 
-{
-    margin: 1em 0 0 0;
+div.thumbnail img {
+	height: 120px;
 }
 
-.editor-field 
-{
-    margin:0.5em 0 0 0;
+#logo-specialty {
+	height: 200px;
 }
 
-
-/* Styles for validation helpers
------------------------------------------------------------*/
-.field-validation-error
-{
-    color: #ff0000;
+#callWaiterWrapper {
+	height: 104px;
+	width: 104px;
+	position: fixed;
+	top: 40%;
+	left: 0;
+	z-index: 1000;
+	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
 }
 
-.field-validation-valid
-{
-    display: none;
-}
-
-.input-validation-error
-{
-    border: 1px solid #ff0000;
-    background-color: #ffeeee;
-}
-
-.validation-summary-errors
-{
-    font-weight: bold;
-    color: #ff0000;
-}
-
-.validation-summary-valid
-{
-    display: none;
+#callWaiterWrapper a {
+	display: block;
+	text-align: center;
+	padding: 10px;
+	font-family: inherit;
+	font-size: 20px;
+	text-decoration: none;
 }

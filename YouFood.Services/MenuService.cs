@@ -9,21 +9,10 @@ namespace YouFood.Services
 {
     public class MenuService
     {
-        //for several menus
-        //public List<Menu> GetAvailableMenus()
-        //{
-        //    MenuRepository menuRepository = new MenuRepository();
-        //    Specialty currentSpecialty = GetCurrentSpecialty();
-
-        //    List<Menu> availableMenus = menuRepository.Get(x => x.SpecialtyId == currentSpecialty.Id).ToList();
-
-        //    return availableMenus;
-        //}
+        private readonly DishRepository dishRepository = new DishRepository();
 
         public Menu GetCurrentMenu()
         {
-            DishRepository dishRepository = new DishRepository();
-
             Specialty currentSpecialty = GetCurrentSpecialty();
 
             List<Dish> availableDishes = dishRepository.Get(x => x.SpecialtyId == currentSpecialty.Id).ToList();
@@ -42,6 +31,46 @@ namespace YouFood.Services
             Specialty currentSpecialty = specialtyRepository.Get(x => x.IsActive == true).Single();
 
             return currentSpecialty;
+        }
+
+        public Specialty GetSpecialty(int id)
+        {
+            SpecialtyRepository specialtyRepository = new SpecialtyRepository();
+            Specialty specialty = specialtyRepository.Get(id);
+
+            return specialty;
+        }
+
+        public void SetSpecialty(int id)
+        {
+            SpecialtyRepository specialtyRepository = new SpecialtyRepository();
+
+            Specialty currentSpecialty = GetCurrentSpecialty();
+            currentSpecialty.IsActive = false;
+
+            Specialty specialty = specialtyRepository.Get(id);
+            specialty.IsActive = true;
+
+            specialtyRepository.SaveOrUpdate();
+        }
+
+        public void AddSpecialty(Specialty specialty)
+        {
+            SpecialtyRepository specialtyRepository = new SpecialtyRepository();
+            specialtyRepository.Add(specialty);
+        }
+
+        public Dish GetDish(int dishId)
+        {
+            Dish dish = dishRepository.Get(dishId);
+            return dish;
+        }
+
+        public List<Dish> GetAllDishes()
+        {
+            List<Dish> dishes = dishRepository.GetAll().ToList();
+
+            return dishes;
         }
     }
 }

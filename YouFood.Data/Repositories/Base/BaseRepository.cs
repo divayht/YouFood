@@ -7,6 +7,6 @@ namespace YouFood.Data.Repositories.Base
 {
     public class BaseRepository<TContext>
     {
-        protected TContext context;
+        public TContext context;
     }
 }

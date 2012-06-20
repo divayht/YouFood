@@ -5,9 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using YouFood.Services;
 using YouFood.Domain.Model;
+using YouFood.ViewModels;
 
 namespace YouFood.Controllers
 {
+    [Authorize]
     public class KitchenController : Controller
     {
         private readonly OrderService orderService;
@@ -20,14 +22,23 @@ namespace YouFood.Controllers
         public ActionResult Index()
         {
             List<Order> orders = orderService.GetPendingOrders();
+            var model = new KitchenViewModel(orders);
 
-            return View(orders);
+            return View(model);
         }
 
-        public ActionResult OrderStateChanged(List<Order> orders)
+        [HttpPost]
+        public ActionResult DishIsCooking(int orderId)
         {
-            return null;
+            orderService.UpdateState(orderId, OrderState.Cooking);
+            return RedirectToAction("Index", "Kitchen");
         }
 
+        [HttpPost]
+        public ActionResult DishIsReadyToServe(int orderId)
+        {
+            orderService.UpdateState(orderId, OrderState.ReadyToServe);
+            return RedirectToAction("Index", "Kitchen");
+        }
     }
 }

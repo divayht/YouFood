@@ -9,24 +9,30 @@ namespace YouFood.Services
 {
     public class OrderService
     {
-        private readonly OrderRepository repository;
+        private readonly OrderRepository orderRepository;
 
         public OrderService()
         {
-            repository = new OrderRepository();
+            orderRepository = new OrderRepository();
         }
 
         public void AddOrder(Order order)
         {
-            repository.Add(order);
-            repository.SaveOrUpdate();
+            orderRepository.Add(order);
+        }
+
+        public void UpdateState(int orderId, OrderState orderState)
+        {
+            Order order = orderRepository.Get(orderId);
+            order.OrderState = orderState;
+            orderRepository.SaveOrUpdate();
         }
 
         public List<Order> GetPendingOrders()
         {
-            List<Order> orders = repository
-                .Get(x => x.OrderState == OrderState.New)
-                .Union(repository.Get(x => x.OrderState == OrderState.Cooking))
+            List<Order> orders = orderRepository
+                .Get(x => x.OrderStateId == (int)OrderState.New)
+                .Union(orderRepository.Get(x => x.OrderStateId == (int)OrderState.Cooking))
                 .ToList();
 
             return orders;
@@ -34,17 +40,14 @@ namespace YouFood.Services
 
         public List<Order> GetReadyOrders()
         {
-            List<Order> orders = repository.Get(x => x.OrderState == OrderState.ReadyToServe).ToList();
+            List<Order> orders = orderRepository.Get(x => x.OrderStateId == (int)OrderState.ReadyToServe).ToList();
 
             return orders;
         }
 
-        public void UpdateOrders(List<Order> orders )
+        public List<Order> GetAllOrders()
         {
-            foreach (var order in orders)
-            {
-                repository.Update(order);
-            }
+            return orderRepository.GetAll().ToList();
         }
     }
 }

@@ -23,6 +23,9 @@ namespace YouFood.Data.Configurations
             Property(x => x.Description)
                 .HasColumnName("Description");
 
+            Property(x => x.Image)
+                .HasColumnName("Image");
+
             Property(x => x.IsActive)
                 .HasColumnName("IsActive")
                 .IsRequired();

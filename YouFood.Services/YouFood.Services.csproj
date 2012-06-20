@@ -48,6 +48,9 @@
     <Compile Include="MenuService.cs" />
     <Compile Include="OrderService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestaurantService.cs" />
+    <Compile Include="Security\PasswordManager.cs" />
+    <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\YouFood.Data\YouFood.Data.csproj">
@@ -63,6 +66,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

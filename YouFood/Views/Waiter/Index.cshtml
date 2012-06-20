@@ -1,5 +1,41 @@
-﻿@{
-    ViewBag.Title = "Index";
+﻿@model List<YouFood.Domain.Model.Order>
+@{
+	ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="container">
+	<h1 class="padded">Plats à Servir</h1>
+	
+	@if (Model.Count == 0)
+	{
+		<div class="label label-info">
+			<p>Il n'y aucun plat à servir.</p>
+		</div>
+	}
+			
+	@foreach (var order in Model)
+	{
+		<div class="row clickable well">
+			<h2>Commande N° @order.Id</h2>
+			<div class="row-fluid">
+				<div class="span6">
+					<ol>
+						@foreach (var line in order.CartLines)
+						{
+							<li>@line.Dish.Name  <span class="badge">@line.Quantity</span></li>
+						}
+					</ol>
+				</div>
+				<div class="span6">
+					@using (Html.BeginForm("OrderIsServed", "Waiter"))
+					{   <input type="hidden" name="orderId" value="@order.Id"/>
+						<button class="btn btn-success btn-large pull-right" type="submit">
+							<i class="icon-remove icon-white"></i>
+							Terminer la commande
+						</button>
+					}
+				</div>
+			</div>
+		</div>
+	}
+</div>

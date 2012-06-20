@@ -1,0 +1,49 @@
+﻿@model List<YouFood.Domain.Model.Dish>
+@{
+    ViewBag.Title = "ListDishes";
+}
+
+@Html.Partial("_NavBar")
+
+<div class="container">
+    
+    @if (Model == null || Model.Count == 0)
+    {
+        <div class="alert alert-danger">
+            <p>Il n'y a aucun plat enregistré dans la base de données.</p>
+        </div>
+    }
+    else
+    {
+        <table class="table table-striped table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Prix</th>
+                    <th>Specialité</th>
+                </tr>
+            </thead>
+            <tbody>
+        
+                @foreach (var dish in Model)
+                {
+                    <tr>
+                        <td>@dish.Id</td>
+                        <td>@dish.Name</td>
+                        <td>@dish.Description</td>
+                        <td>@dish.Price</td>
+                        @if (dish.Specialty != null)
+                        {
+                            <td>@dish.Specialty.Name</td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    <div class="form-actions">
+        <a class="btn btn-primary btn-large" href="/Admin/AddDish">Ajouter un plat</a>
+    </div>
+</div>

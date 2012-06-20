@@ -12,7 +12,8 @@ namespace YouFood.Data.Repositories
     {
         public RestaurantRepository()
         {
-            var webContext = (WebContext)ContextFactory.CreateContext(ContextType.WebContext);
+            //var webContext = (WebContext)ContextFactory.CreateContext(ContextType.WebContext);
+            var webContext = SharedObjectContext.Instance.Context;
 
             base.context = webContext;
             base.Entity = webContext.Restaurants;

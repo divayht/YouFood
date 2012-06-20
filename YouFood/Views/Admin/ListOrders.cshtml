@@ -1,0 +1,42 @@
+﻿@model List<YouFood.Domain.Model.Order>
+@{
+    ViewBag.Title = "List";
+}
+
+@Html.Partial("_NavBar")
+
+<div class="container">
+    
+    @if (Model == null || Model.Count == 0)
+    {
+        <div class="alert alert-danger">
+            <p>Il n'y a aucune enregistrée dans la base de données.</p>
+        </div>
+    }
+    else
+    {
+        <table class="table table-striped table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Etat</th>
+                    <th>Montant</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+        
+                @foreach (var order in Model)
+                {
+                    <tr>
+                        <td>@order.Id</td>
+                        <td>@order.OrderState.ToString()</td>
+                        <td>@order.Price €</td>
+                        <td>@order.Date.ToString()</td>
+                    </tr>
+                }    
+            </tbody>
+        </table>
+    }
+</div>
+
